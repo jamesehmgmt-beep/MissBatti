@@ -32,7 +32,7 @@ const TrackOrderPage = () => {
                 type="text"
                 value={orderNumber}
                 onChange={(e) => setOrderNumber(e.target.value)}
-                placeholder="e.g. BATTI-12345"
+                placeholder="e.g. MB-12345"
                 className="w-full px-4 py-3 border border-border bg-background focus:outline-none focus:border-foreground transition-colors"
               />
             </div>

@@ -78,7 +78,7 @@ const WishlistPage = () => {
                   <Heart className="w-16 h-16 mx-auto text-muted-foreground mb-4" />
                   <p className="text-muted-foreground">Your wishlist is empty.</p>
                   <Link 
-                    to="/category/shapewear" 
+                    to="/category/all" 
                     className="inline-block mt-4 px-6 py-3 bg-foreground text-background text-sm font-medium uppercase tracking-wider hover:bg-foreground/90 transition-colors"
                   >
                     Explore Products

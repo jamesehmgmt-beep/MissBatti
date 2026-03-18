@@ -8,32 +8,32 @@ const AboutPage = () => {
       <div className="pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-4">
           <div className="text-center mb-12">
-            <h1 className="text-3xl font-serif mb-4">About BATTI©</h1>
+            <h1 className="text-3xl font-serif mb-4">About MissBatti</h1>
             <p className="text-muted-foreground">
-              Empowering confidence through innovative shapewear.
+              Elevating your nail game with premium press-on nails.
             </p>
           </div>
 
           <div className="space-y-8 text-muted-foreground">
             <p>
-              BATTI© was founded with a simple mission: to create shapewear that makes every woman feel confident, comfortable, and beautiful in her own skin. We believe that true beauty comes from within, and our products are designed to enhance what you already have.
+              MissBatti was born from a passion for beautiful nails and a belief that luxury nail art should be accessible to everyone. We design premium press-on nails that deliver salon-quality results in minutes — no appointments, no wait times, no damage to your natural nails.
             </p>
             
             <p>
-              Our team of designers and engineers work tirelessly to develop innovative fabrics and construction techniques that provide seamless shaping without sacrificing comfort. Every piece in our collection is crafted with attention to detail and a commitment to quality.
+              Each set in our collection is hand-crafted with meticulous attention to detail, using high-quality materials that look and feel like a professional manicure. From elegant French tips to bold statement designs, our nails are made to turn heads.
             </p>
 
             <p>
-              We're proud to be a brand that celebrates all body types and sizes. Our inclusive sizing and thoughtful designs ensure that every woman can find her perfect fit.
+              We're proud to offer a wide range of styles for every occasion — whether you're looking for everyday elegance or a show-stopping set for a special event. MissBatti nails are reusable, easy to apply, and designed to last.
             </p>
 
             <div className="border-t border-border pt-8">
               <h2 className="text-xl font-medium text-foreground mb-4">Our Values</h2>
               <ul className="space-y-3">
-                <li><strong className="text-foreground">Quality:</strong> Premium materials and expert craftsmanship in every piece.</li>
-                <li><strong className="text-foreground">Inclusivity:</strong> Shapewear for every body, every size, every woman.</li>
-                <li><strong className="text-foreground">Comfort:</strong> All-day wearability without compromise.</li>
-                <li><strong className="text-foreground">Confidence:</strong> Empowering you to feel your best, always.</li>
+                <li><strong className="text-foreground">Quality:</strong> Premium materials and handcrafted artistry in every set.</li>
+                <li><strong className="text-foreground">Creativity:</strong> Unique designs inspired by the latest nail art trends.</li>
+                <li><strong className="text-foreground">Accessibility:</strong> Salon-quality nails at a fraction of the cost.</li>
+                <li><strong className="text-foreground">Confidence:</strong> Empowering you to express yourself through beautiful nails.</li>
               </ul>
             </div>
           </div>

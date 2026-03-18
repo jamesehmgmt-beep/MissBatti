@@ -37,7 +37,7 @@ const ContactPage = () => {
                   <Mail className="w-5 h-5 mt-1" />
                   <div>
                     <p className="font-medium">Email</p>
-                    <p className="text-sm text-muted-foreground">support@batti.com</p>
+                    <p className="text-sm text-muted-foreground">support@missbatti.com</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

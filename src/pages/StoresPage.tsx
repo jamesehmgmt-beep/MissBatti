@@ -18,7 +18,7 @@ const StoresPage = () => {
 
           <div className="text-center py-12 border border-border">
             <p className="text-muted-foreground mb-4">
-              BATTI© is currently available exclusively online.
+              MissBatti is currently available exclusively online.
             </p>
             <p className="text-sm text-muted-foreground">
               Stay tuned for retail locations coming soon.

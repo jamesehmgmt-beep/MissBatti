@@ -8,61 +8,59 @@ import { useCartStore } from "@/stores/cartStore";
 import { toast } from "sonner";
 
 // Import subcategory images
-import shortsImage from "@/assets/shorts1.png";
-import pantiesImage from "@/assets/panties1.png";
-import jumpsuitsImage from "@/assets/jumpsuits1.png";
-import bodysuitImage from "@/assets/bodysuits1.png";
-import rompersImage from "@/assets/rompers1.png";
+import bestsellerImage from "@/assets/bestseller.webp";
+import frenchImage from "@/assets/french.webp";
+import newImage from "@/assets/new.webp";
+import inspiredImage from "@/assets/inspired.webp";
 
 // Subcategory circles configuration
 const subcategoryCircles = [
-  { title: "Shorts", link: "/category/shorts", image: shortsImage },
-  { title: "Panties", link: "/category/panties", image: pantiesImage },
-  { title: "Jumpsuits", link: "/category/jumpsuits", image: jumpsuitsImage },
-  { title: "Bodysuits", link: "/category/bodysuits", image: bodysuitImage },
-  { title: "Rompers", link: "/category/romper", image: rompersImage },
+  { title: "Best Seller", link: "/category/best-seller", image: bestsellerImage },
+  { title: "French", link: "/category/french", image: frenchImage },
+  { title: "New Releases", link: "/category/new-releases", image: newImage },
+  { title: "Inspired", link: "/category/inspired", image: inspiredImage },
 ];
 
 // Category configuration
 const categoryConfig: Record<string, { title: string; description: string; query?: string }> = {
   "best-seller": {
     title: "Best Sellers",
-    description: "Our most loved shapewear pieces, trusted by thousands.",
+    description: "Our most loved press-on nail sets, adored by thousands.",
     query: undefined,
   },
-  "shapewear": {
-    title: "All Shapewear",
-    description: "Discover our complete collection of sculpting essentials.",
+  "all": {
+    title: "All Nails",
+    description: "Explore our complete collection of premium press-on nails.",
     query: undefined,
   },
-  "shorts": {
-    title: "BATTI© Shorts",
-    description: "Sculpting shorts for a seamless silhouette.",
-    query: "Shorts",
+  "the-set": {
+    title: "The Set",
+    description: "Curated nail sets for every style and occasion.",
+    query: undefined,
   },
-  "panties": {
-    title: "BATTI© Panties",
-    description: "Shaping panties for everyday comfort.",
-    query: "Panty",
+  "premium": {
+    title: "Premium",
+    description: "Our finest luxury press-on nail collections.",
+    query: undefined,
   },
-  "jumpsuits": {
-    title: "BATTI© Jumpsuits",
-    description: "Full-body sculpting jumpsuits.",
-    query: "Jumpsuit",
+  "french": {
+    title: "French",
+    description: "Classic and modern French tip press-on nails.",
+    query: "French",
   },
-  "bodysuits": {
-    title: "BATTI© Bodysuits",
-    description: "Seamless bodysuits for complete control.",
-    query: "Bodysuit",
+  "new-releases": {
+    title: "New Releases",
+    description: "The latest designs fresh from our studio.",
+    query: undefined,
   },
-  "romper": {
-    title: "BATTI© Rompers",
-    description: "Stylish rompers with built-in shaping.",
-    query: "Romper",
+  "inspired": {
+    title: "Inspired",
+    description: "Creative and artistic press-on nail designs.",
+    query: undefined,
   },
   "why-us": {
-    title: "Why Choose BATTI©?",
-    description: "Quality, comfort, and confidence in every piece.",
+    title: "Why Choose MissBatti?",
+    description: "Quality, artistry, and confidence in every set.",
     query: undefined,
   },
 };
@@ -73,7 +71,7 @@ const CategoryPage = () => {
   const [loading, setLoading] = useState(true);
   const addItem = useCartStore((state) => state.addItem);
 
-  const config = category ? categoryConfig[category] || { title: category.replace(/-/g, " ").toUpperCase(), description: "" } : categoryConfig["shapewear"];
+  const config = category ? categoryConfig[category] || { title: category.replace(/-/g, " ").toUpperCase(), description: "" } : categoryConfig["all"];
 
   useEffect(() => {
     const loadProducts = async () => {

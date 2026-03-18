@@ -199,19 +199,19 @@ const mockReviews = [
   {
     id: 1,
     rating: 5,
-    title: "Underwear",
-    content: "Excellent for working out very comfortable",
-    fits: "True to size",
-    sizePurchased: "Large",
+    title: "Absolutely gorgeous!",
+    content: "These nails are stunning! So easy to apply and they lasted over 2 weeks. Will definitely be ordering more sets.",
+    fits: "Perfect fit",
+    sizePurchased: "Medium",
     daysAgo: 11,
     hasResponse: false,
   },
   {
     id: 2,
     rating: 5,
-    title: "5 stars to Batti panties!",
-    content: "Great fit, a tad expensive but they don't wear out!!",
-    fits: "True to size",
+    title: "5 stars to MissBatti nails!",
+    content: "The quality is incredible. They look like a salon manicure but at a fraction of the cost!",
+    fits: "Perfect fit",
     sizePurchased: null,
     daysAgo: 21,
     hasResponse: false,
@@ -219,15 +219,15 @@ const mockReviews = [
   {
     id: 3,
     rating: 5,
-    title: "Under Ease High Rise Bikini",
-    content: "These are amazing, comfortable and don't ride up. Nothing else on the market compares.",
+    title: "My new go-to for nails",
+    content: "I've tried so many press-on brands and MissBatti is hands down the best. The designs are gorgeous and they actually stay on.",
     fits: null,
     sizePurchased: null,
     daysAgo: 24,
     hasResponse: true,
     response: {
-      author: "Batti Customer Care",
-      content: "The underwear that truly sets the bar.",
+      author: "MissBatti Customer Care",
+      content: "Thank you so much! We love hearing that our nails make you feel beautiful. 💅",
       daysAgo: 24,
     },
   },
@@ -405,7 +405,7 @@ const ReviewsSection = () => {
                 {/* Brand Response */}
                 {review.hasResponse && review.response && (
                   <div className="mt-4 bg-[#f5f0eb] p-4 rounded-md">
-                    <p className="text-sm text-muted-foreground mb-2">Response from Batti</p>
+                    <p className="text-sm text-muted-foreground mb-2">Response from MissBatti</p>
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-6 h-6 bg-foreground rounded-full flex items-center justify-center">
                         <span className="text-background text-xs font-bold">B</span>
@@ -558,7 +558,7 @@ const ProductPage = () => {
         <nav className="text-xs text-muted-foreground">
           <Link to="/" className="hover:text-foreground">Home</Link>
           <span className="mx-2">/</span>
-          <Link to="/category/shapewear" className="hover:text-foreground">Womens Panties</Link>
+          <Link to="/category/all" className="hover:text-foreground">All Nails</Link>
           <span className="mx-2">/</span>
           <span className="text-foreground">{product.title}</span>
         </nav>
@@ -593,18 +593,18 @@ const ProductPage = () => {
 
             {/* Product Title */}
             <div>
-              <p className="text-base font-medium">BATTI©</p>
+              <p className="text-base font-medium">MissBatti</p>
               <p className="text-base text-muted-foreground">{product.title}</p>
             </div>
 
-            {/* Compression Level */}
+            {/* Quality Level */}
             <div className="flex items-center gap-2">
               <div className="flex gap-0.5">
                 <div className="w-6 h-1 bg-foreground"></div>
                 <div className="w-6 h-1 bg-foreground"></div>
-                <div className="w-6 h-1 bg-muted"></div>
+                <div className="w-6 h-1 bg-foreground"></div>
               </div>
-              <span className="text-xs uppercase tracking-wide text-muted-foreground">Firm Compression</span>
+              <span className="text-xs uppercase tracking-wide text-muted-foreground">Premium Quality</span>
             </div>
 
             {/* Rating & SKU */}
@@ -1032,45 +1032,45 @@ const ProductPage = () => {
 
             {/* Product Details Accordion Section */}
             <div className="space-y-0 pt-4 border-t border-border">
-              {/* Designed for Yoga and Casual */}
+              {/* Perfect for Every Occasion */}
               <Collapsible open={designedOpen} onOpenChange={setDesignedOpen}>
                 <CollapsibleTrigger className="w-full flex items-center justify-between py-4 border-b border-border/50">
                   <div className="flex items-center gap-3">
                     <Dumbbell className="w-5 h-5" />
-                    <span className="text-sm font-medium">Designed for Yoga and Casual</span>
+                    <span className="text-sm font-medium">Perfect for Every Occasion</span>
                   </div>
                   <ChevronDown className={`w-4 h-4 transition-transform ${designedOpen ? 'rotate-180' : ''}`} />
                 </CollapsibleTrigger>
                 <CollapsibleContent className="py-3 text-sm text-muted-foreground">
-                  Perfect for yoga sessions, casual wear, or everyday activities. The flexible design moves with you for maximum comfort.
+                  From everyday glam to special events, these nails are designed to complement any look and elevate your style.
                 </CollapsibleContent>
               </Collapsible>
 
-              {/* Silky-Soft, Breathable Fabric */}
+              {/* Premium Nail Material */}
               <Collapsible open={fabricOpen} onOpenChange={setFabricOpen}>
                 <CollapsibleTrigger className="w-full flex items-center justify-between py-4 border-b border-border/50">
                   <div className="flex items-center gap-3">
                     <Leaf className="w-5 h-5" />
-                    <span className="text-sm font-medium">Silky-Soft, Breathable Fabric</span>
+                    <span className="text-sm font-medium">Premium Nail Material</span>
                   </div>
                   <ChevronDown className={`w-4 h-4 transition-transform ${fabricOpen ? 'rotate-180' : ''}`} />
                 </CollapsibleTrigger>
                 <CollapsibleContent className="py-3 text-sm text-muted-foreground">
-                  Made with premium breathable fabrics that feel silky-soft against your skin while keeping you cool and comfortable all day.
+                  Crafted from high-quality ABS material with a salon-grade gel finish for a natural, glossy look that lasts up to 2+ weeks.
                 </CollapsibleContent>
               </Collapsible>
 
-              {/* High Rise, Bikini Fit */}
+              {/* Nail Shapes & Sizes */}
               <Collapsible open={fitOpen} onOpenChange={setFitOpen}>
                 <CollapsibleTrigger className="w-full flex items-center justify-between py-4 border-b border-border/50">
                   <div className="flex items-center gap-3">
                     <SlidersHorizontal className="w-5 h-5" />
-                    <span className="text-sm font-medium">High Rise, Bikini Fit</span>
+                    <span className="text-sm font-medium">Nail Shapes & Sizes</span>
                   </div>
                   <ChevronDown className={`w-4 h-4 transition-transform ${fitOpen ? 'rotate-180' : ''}`} />
                 </CollapsibleTrigger>
                 <CollapsibleContent className="py-3 text-sm text-muted-foreground">
-                  High-rise waistband provides extra coverage and support, while the bikini fit offers a flattering silhouette.
+                  Each set includes multiple sizes to ensure a perfect fit for every finger. File to your desired length and shape for a custom look.
                 </CollapsibleContent>
               </Collapsible>
 
@@ -1084,27 +1084,27 @@ const ProductPage = () => {
                   <ChevronDown className={`w-4 h-4 transition-transform ${productFeaturesOpen ? 'rotate-180' : ''}`} />
                 </CollapsibleTrigger>
                 <CollapsibleContent className="py-3 text-sm text-muted-foreground space-y-2">
-                  <p>• DuraFit® technology for firm compression</p>
-                  <p>• No leg bands for seamless look</p>
-                  <p>• 100% cotton gusset</p>
-                  <p>• Invisible under clothes</p>
+                  <p>• Salon-quality gel finish</p>
+                  <p>• Reusable up to 3+ times with proper care</p>
+                  <p>• Includes nail glue & prep kit</p>
+                  <p>• 24 nails per set in 12 sizes</p>
                 </CollapsibleContent>
               </Collapsible>
 
-              {/* Material and care */}
+              {/* Application & Care */}
               <Collapsible open={materialOpen} onOpenChange={setMaterialOpen}>
                 <CollapsibleTrigger className="w-full flex items-center justify-between py-4 border-b border-border/50">
                   <div className="flex items-center gap-3">
                     <WashingMachine className="w-5 h-5" />
-                    <span className="text-sm font-medium">Material and care</span>
+                    <span className="text-sm font-medium">Application & Care</span>
                   </div>
                   <ChevronDown className={`w-4 h-4 transition-transform ${materialOpen ? 'rotate-180' : ''}`} />
                 </CollapsibleTrigger>
                 <CollapsibleContent className="py-3 text-sm text-muted-foreground space-y-2">
-                  <p><strong>Fabric:</strong> 59% polyamide, 41% elastane</p>
-                  <p><strong>Interior lining:</strong> 57% polyamide, 43% elastane</p>
-                  <p><strong>Care:</strong> Hand wash cold, do not bleach, line dry</p>
-                  <p><strong>Origin:</strong> Made sustainably in Colombia</p>
+                  <p><strong>Material:</strong> Premium ABS with gel finish</p>
+                  <p><strong>Application:</strong> Clean nails, apply glue, press and hold for 30 seconds</p>
+                  <p><strong>Removal:</strong> Soak in warm water for 10-15 minutes, gently peel off</p>
+                  <p><strong>Care tip:</strong> Avoid prolonged water exposure for maximum longevity</p>
                 </CollapsibleContent>
               </Collapsible>
             </div>
@@ -1112,12 +1112,12 @@ const ProductPage = () => {
             {/* View Product Features */}
             <Collapsible open={featuresOpen} onOpenChange={setFeaturesOpen}>
               <CollapsibleTrigger className="w-full flex items-center justify-center gap-2 py-3 bg-secondary/50 hover:bg-secondary/70 transition-colors text-sm font-medium uppercase tracking-wide rounded-full">
-                View Product Features
+                View Product Details
                 <ChevronDown className={`w-4 h-4 transition-transform ${featuresOpen ? 'rotate-180' : ''}`} />
               </CollapsibleTrigger>
               <CollapsibleContent className="pt-4 space-y-2 text-sm text-muted-foreground">
-                <p><strong>Care:</strong> Hand wash cold, do not bleach, line dry.</p>
-                <p><strong>Origin:</strong> Made in Colombia</p>
+                <p><strong>Includes:</strong> 24 press-on nails, nail glue, prep file, cuticle stick</p>
+                <p><strong>Duration:</strong> Lasts 2+ weeks with proper application</p>
               </CollapsibleContent>
             </Collapsible>
 
@@ -1131,7 +1131,7 @@ const ProductPage = () => {
                 <p><strong>Free Shipping:</strong> On all orders over $99</p>
                 <p><strong>Standard Shipping:</strong> 5-7 business days</p>
                 <p><strong>Express Shipping:</strong> 2-3 business days</p>
-                <p className="pt-2"><strong>Returns:</strong> Due to hygiene reasons, this item is non-returnable and non-exchangeable.</p>
+                <p className="pt-2"><strong>Returns:</strong> Due to hygiene reasons, press-on nail sets are non-returnable and non-exchangeable.</p>
               </CollapsibleContent>
             </Collapsible>
           </div>
@@ -1148,7 +1148,7 @@ const ProductPage = () => {
               <div className="w-10 h-1 bg-red-600 mt-6"></div>
             </div>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed max-w-sm">
-              The ones you'll reach for. These soft underwear move with you (and don't dig in) during workouts and hang outs.
+              Salon-quality nails that you can apply at home in minutes. No appointments, no damage, just beautiful nails whenever you want them.
             </p>
           </div>
 
@@ -1177,45 +1177,45 @@ const ProductPage = () => {
 
         {/* Accordion Section */}
         <div className="mt-12 max-w-6xl mx-auto">
-          {/* Designed for Yoga and Casual */}
+          {/* Perfect for Every Occasion */}
           <Collapsible open={designedOpen} onOpenChange={setDesignedOpen}>
             <CollapsibleTrigger className="w-full flex items-center justify-between py-5 border-b border-border/30">
               <div className="flex items-center gap-4">
                 <Dumbbell className="w-5 h-5" />
-                <span className="text-base font-medium">Designed for Yoga and Casual</span>
+                <span className="text-base font-medium">Perfect for Every Occasion</span>
               </div>
               <Plus className={`w-5 h-5 transition-transform ${designedOpen ? 'rotate-45' : ''}`} />
             </CollapsibleTrigger>
             <CollapsibleContent className="py-4 text-sm text-muted-foreground">
-              Perfect for yoga sessions, casual wear, or everyday activities. The flexible design moves with you for maximum comfort.
+              From everyday glam to special events, these nails are designed to complement any look and elevate your style.
             </CollapsibleContent>
           </Collapsible>
 
-          {/* Silky-Soft, Breathable Fabric */}
+          {/* Premium Nail Material */}
           <Collapsible open={fabricOpen} onOpenChange={setFabricOpen}>
             <CollapsibleTrigger className="w-full flex items-center justify-between py-5 border-b border-border/30">
               <div className="flex items-center gap-4">
                 <Leaf className="w-5 h-5" />
-                <span className="text-base font-medium">Silky-Soft, Breathable Fabric</span>
+                <span className="text-base font-medium">Premium Nail Material</span>
               </div>
               <Plus className={`w-5 h-5 transition-transform ${fabricOpen ? 'rotate-45' : ''}`} />
             </CollapsibleTrigger>
             <CollapsibleContent className="py-4 text-sm text-muted-foreground">
-              Made with premium breathable fabrics that feel silky-soft against your skin while keeping you cool and comfortable all day.
+              Crafted from high-quality ABS material with a salon-grade gel finish for a natural, glossy look that lasts up to 2+ weeks.
             </CollapsibleContent>
           </Collapsible>
 
-          {/* High Rise, Bikini Fit */}
+          {/* Nail Shapes & Sizes */}
           <Collapsible open={fitOpen} onOpenChange={setFitOpen}>
             <CollapsibleTrigger className="w-full flex items-center justify-between py-5 border-b border-border/30">
               <div className="flex items-center gap-4">
                 <SlidersHorizontal className="w-5 h-5" />
-                <span className="text-base font-medium">High Rise, Bikini Fit</span>
+                <span className="text-base font-medium">Nail Shapes & Sizes</span>
               </div>
               <Plus className={`w-5 h-5 transition-transform ${fitOpen ? 'rotate-45' : ''}`} />
             </CollapsibleTrigger>
             <CollapsibleContent className="py-4 text-sm text-muted-foreground">
-              High-rise waistband provides extra coverage and support, while the bikini fit offers a flattering silhouette.
+              Each set includes multiple sizes to ensure a perfect fit for every finger. File to your desired length and shape for a custom look.
             </CollapsibleContent>
           </Collapsible>
 
@@ -1229,27 +1229,27 @@ const ProductPage = () => {
               <Plus className={`w-5 h-5 transition-transform ${productFeaturesOpen ? 'rotate-45' : ''}`} />
             </CollapsibleTrigger>
             <CollapsibleContent className="py-4 text-sm text-muted-foreground space-y-2">
-              <p>• DuraFit® technology for firm compression</p>
-              <p>• No leg bands for seamless look</p>
-              <p>• 100% cotton gusset</p>
-              <p>• Invisible under clothes</p>
+              <p>• Salon-quality gel finish</p>
+              <p>• Reusable up to 3+ times with proper care</p>
+              <p>• Includes nail glue & prep kit</p>
+              <p>• 24 nails per set in 12 sizes</p>
             </CollapsibleContent>
           </Collapsible>
 
-          {/* Material and care */}
+          {/* Application & Care */}
           <Collapsible open={materialOpen} onOpenChange={setMaterialOpen}>
             <CollapsibleTrigger className="w-full flex items-center justify-between py-5 border-b border-border/30">
               <div className="flex items-center gap-4">
                 <WashingMachine className="w-5 h-5" />
-                <span className="text-base font-medium">Material and care</span>
+                <span className="text-base font-medium">Application & Care</span>
               </div>
               <Plus className={`w-5 h-5 transition-transform ${materialOpen ? 'rotate-45' : ''}`} />
             </CollapsibleTrigger>
             <CollapsibleContent className="py-4 text-sm text-muted-foreground space-y-2">
-              <p><strong>Fabric:</strong> 59% polyamide, 41% elastane</p>
-              <p><strong>Interior lining:</strong> 57% polyamide, 43% elastane</p>
-              <p><strong>Care:</strong> Hand wash cold, do not bleach, line dry</p>
-              <p><strong>Origin:</strong> Made sustainably in Colombia</p>
+              <p><strong>Material:</strong> Premium ABS with gel finish</p>
+              <p><strong>Application:</strong> Clean nails, apply glue, press and hold for 30 seconds</p>
+              <p><strong>Removal:</strong> Soak in warm water for 10-15 minutes, gently peel off</p>
+              <p><strong>Care tip:</strong> Avoid prolonged water exposure for maximum longevity</p>
             </CollapsibleContent>
           </Collapsible>
         </div>

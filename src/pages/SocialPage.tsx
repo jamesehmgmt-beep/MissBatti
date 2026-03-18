@@ -12,7 +12,7 @@ const SocialPage = () => {
             <Instagram className="w-12 h-12 mx-auto mb-4 text-foreground" />
             <h1 className="text-3xl font-serif mb-4">Follow Us</h1>
             <p className="text-muted-foreground">
-              Stay connected with BATTI© on social media.
+              Stay connected with MissBatti© on social media.
             </p>
           </div>
 
@@ -20,22 +20,22 @@ const SocialPage = () => {
             <a href="#" className="flex flex-col items-center p-6 border border-border hover:border-foreground transition-colors">
               <Instagram className="w-8 h-8 mb-3" />
               <span className="font-medium">Instagram</span>
-              <span className="text-sm text-muted-foreground">@battiofficial</span>
+              <span className="text-sm text-muted-foreground">@missMissBattinails</span>
             </a>
             <a href="#" className="flex flex-col items-center p-6 border border-border hover:border-foreground transition-colors">
               <Facebook className="w-8 h-8 mb-3" />
               <span className="font-medium">Facebook</span>
-              <span className="text-sm text-muted-foreground">BATTI Official</span>
+              <span className="text-sm text-muted-foreground">MissMissBatti Nails</span>
             </a>
             <a href="#" className="flex flex-col items-center p-6 border border-border hover:border-foreground transition-colors">
               <Twitter className="w-8 h-8 mb-3" />
               <span className="font-medium">Twitter</span>
-              <span className="text-sm text-muted-foreground">@batti</span>
+              <span className="text-sm text-muted-foreground">@missMissBattinails</span>
             </a>
             <a href="#" className="flex flex-col items-center p-6 border border-border hover:border-foreground transition-colors">
               <Youtube className="w-8 h-8 mb-3" />
               <span className="font-medium">YouTube</span>
-              <span className="text-sm text-muted-foreground">BATTI</span>
+              <span className="text-sm text-muted-foreground">MissBatti</span>
             </a>
           </div>
         </div>

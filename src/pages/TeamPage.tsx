@@ -12,13 +12,13 @@ const TeamPage = () => {
             <Users className="w-12 h-12 mx-auto mb-4 text-foreground" />
             <h1 className="text-3xl font-serif mb-4">Our Team</h1>
             <p className="text-muted-foreground">
-              Meet the people behind BATTI©.
+              Meet the people behind MissBatti.
             </p>
           </div>
 
           <div className="text-center py-12">
             <p className="text-muted-foreground">
-              Our passionate team of designers, engineers, and customer service specialists work together to bring you the best shapewear experience. We're united by our mission to help every woman feel confident and comfortable.
+              Our passionate team of designers and nail artists work together to create stunning press-on nails. We're united by our mission to make luxury nail art accessible to everyone.
             </p>
           </div>
         </div>

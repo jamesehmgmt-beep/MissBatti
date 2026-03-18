@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { User, ShoppingBag, Menu, X } from "lucide-react";
 import { useCartStore } from "@/stores/cartStore";
 import { CartDrawer } from "./CartDrawer";
-import battiLogo from "@/assets/batti-logo.png";
+import battiLogo from "@/assets/batti-logo.webp";
 import { useAuth } from "@/hooks/useAuth";
 import {
   Sheet,
@@ -11,19 +11,10 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-const shapewearCategories = [
-  { title: "BATTI© Shorts", link: "/category/shorts" },
-  { title: "BATTI© Panties", link: "/category/panties" },
-  { title: "BATTI© Jumpsuits", link: "/category/jumpsuits" },
-  { title: "BATTI© Bodysuits", link: "/category/bodysuits" },
-  { title: "BATTI© Romper", link: "/category/romper" },
-  { title: "BATTI© Back Correctors & Bras", link: "/product/batti©-posturefix" },
-];
-
 const mainNavItems = [
   { title: "BEST SELLER", link: "/category/best-seller" },
-  { title: "SHAPEWEAR", link: "/category/shapewear", hasSubmenu: true },
-  { title: "APPAREL", link: "/apparel" },
+  { title: "THE SET", link: "/category/the-set" },
+  { title: "PREMIUM", link: "/category/premium" },
 ];
 
 export const Header = () => {
@@ -32,9 +23,7 @@ export const Header = () => {
   const { user } = useAuth();
   const isHomePage = location.pathname === "/";
   const [isScrolled, setIsScrolled] = useState(!isHomePage);
-  const [isShapewearOpen, setIsShapewearOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isShapewearMobileOpen, setIsShapewearMobileOpen] = useState(false);
   const totalItems = useCartStore((state) => state.getTotalItems());
 
   const handleAccountClick = () => {
@@ -80,47 +69,14 @@ export const Header = () => {
               <SheetContent side="left" className="w-80 bg-background">
                 <div className="flex flex-col gap-6 mt-8">
                   {mainNavItems.map((item) => (
-                    <div key={item.link}>
-                      {item.hasSubmenu ? (
-                        <div>
-                          <button
-                            onClick={() => setIsShapewearMobileOpen(!isShapewearMobileOpen)}
-                            className="text-lg font-medium tracking-wider text-foreground hover:opacity-70 transition-opacity w-full text-left"
-                          >
-                            {item.title}
-                          </button>
-                          {isShapewearMobileOpen && (
-                            <div className="ml-4 mt-4 flex flex-col gap-3">
-                              <Link
-                                to={item.link}
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="text-base font-medium tracking-wide text-foreground hover:opacity-70 transition-opacity"
-                              >
-                                All Shapewear
-                              </Link>
-                              {shapewearCategories.map((cat) => (
-                                <Link
-                                  key={cat.link}
-                                  to={cat.link}
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                  className="text-base font-medium tracking-wide text-foreground hover:opacity-70 transition-opacity"
-                                >
-                                  {cat.title}
-                                </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ) : (
-                        <Link
-                          to={item.link}
-                          onClick={() => setIsMobileMenuOpen(false)}
-                          className="text-lg font-medium tracking-wider text-foreground hover:opacity-70 transition-opacity"
-                        >
-                          {item.title}
-                        </Link>
-                      )}
-                    </div>
+                    <Link
+                      key={item.link}
+                      to={item.link}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-lg font-medium tracking-wider text-foreground hover:opacity-70 transition-opacity"
+                    >
+                      {item.title}
+                    </Link>
                   ))}
                 </div>
               </SheetContent>
@@ -129,59 +85,20 @@ export const Header = () => {
 
           {/* Left Navigation - Desktop Only */}
           <div className="hidden lg:flex items-center gap-8">
-            <Link
-              to="/category/best-seller"
-              className="text-sm font-medium tracking-wider text-foreground hover:opacity-70 transition-opacity"
-            >
-              BEST SELLER
-            </Link>
-            
-            {/* Shapewear Dropdown */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setIsShapewearOpen(true)}
-              onMouseLeave={() => setIsShapewearOpen(false)}
-            >
+            {mainNavItems.map((item) => (
               <Link
-                to="/category/shapewear"
+                key={item.link}
+                to={item.link}
                 className="text-sm font-medium tracking-wider text-foreground hover:opacity-70 transition-opacity"
               >
-                SHAPEWEAR
+                {item.title}
               </Link>
-              
-              {/* Dropdown Menu */}
-              <div 
-                className={`absolute top-full left-0 mt-2 w-56 bg-background border border-border shadow-lg transition-all duration-200 ${
-                  isShapewearOpen 
-                    ? "opacity-100 visible translate-y-0" 
-                    : "opacity-0 invisible -translate-y-2"
-                }`}
-              >
-                <div className="py-2">
-                  {shapewearCategories.map((cat) => (
-                    <Link
-                      key={cat.link}
-                      to={cat.link}
-                      className="block px-4 py-3 text-sm font-medium tracking-wide text-foreground hover:bg-secondary transition-colors"
-                    >
-                      {cat.title}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <Link
-              to="/apparel"
-              className="text-sm font-medium tracking-wider text-foreground hover:opacity-70 transition-opacity"
-            >
-              APPAREL
-            </Link>
+            ))}
           </div>
 
           {/* Center Logo */}
           <Link to="/" className="absolute left-1/2 -translate-x-1/2">
-            <img src={battiLogo} alt="Batti" className="h-[90px] lg:h-[118px] w-auto mt-2" />
+            <img src={battiLogo} alt="MissBatti" className="h-[90px] lg:h-[118px] w-auto mt-2" />
           </Link>
 
           {/* Right Navigation */}

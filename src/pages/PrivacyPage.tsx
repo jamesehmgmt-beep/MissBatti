@@ -48,14 +48,14 @@ const PrivacyPage = () => {
             <section>
               <h2 className="text-xl font-medium text-foreground mb-4">Your Rights</h2>
               <p>
-                You have the right to access, correct, or delete your personal information. Contact us at privacy@batti.com to exercise these rights.
+                You have the right to access, correct, or delete your personal information. Contact us at privacy@missbatti.com to exercise these rights.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-medium text-foreground mb-4">Contact Us</h2>
               <p>
-                If you have questions about this Privacy Policy, please contact us at privacy@batti.com.
+                If you have questions about this Privacy Policy, please contact us at privacy@missbatti.com.
               </p>
             </section>
           </div>

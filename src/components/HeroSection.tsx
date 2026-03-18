@@ -1,37 +1,21 @@
 import { Link } from "react-router-dom";
-import heroVideo from "@/assets/1226.mp4";
-import heroVideoMobile from "@/assets/1226_mobile.mp4";
+import heroImage from "@/assets/hero.webp";
 
 interface HeroSectionProps {
   ctaLink?: string;
 }
 
 export const HeroSection = ({ 
-  ctaLink = "/category/shapewear"
+  ctaLink = "/category/all"
 }: HeroSectionProps) => {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-secondary">
-      {/* Video background - Desktop */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover hidden md:block"
-      >
-        <source src={heroVideo} type="video/mp4" />
-      </video>
-      
-      {/* Video background - Mobile */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover md:hidden"
-      >
-        <source src={heroVideoMobile} type="video/mp4" />
-      </video>
+      {/* Hero Image */}
+      <img 
+        src={heroImage} 
+        alt="MissBatti Hero" 
+        className="absolute inset-0 w-full h-full object-cover"
+      />
       
       {/* Overlay */}
       <div className="absolute inset-0 hero-overlay" />

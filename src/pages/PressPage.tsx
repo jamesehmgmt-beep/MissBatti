@@ -21,7 +21,7 @@ const PressPage = () => {
               For press inquiries, please contact our media team.
             </p>
             <p className="text-sm text-muted-foreground">
-              Email: <a href="mailto:press@batti.com" className="underline hover:text-foreground">press@batti.com</a>
+              Email: <a href="mailto:press@missbatti.com" className="underline hover:text-foreground">press@missbatti.com</a>
             </p>
           </div>
         </div>

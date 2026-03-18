@@ -75,7 +75,7 @@ export const Footer = () => {
   return <footer className="bg-foreground text-background">
       {/* Social follow section */}
       <div className="py-8 border-b border-background/20">
-        <p className="text-center text-xs tracking-widest uppercase mb-4">FOLLOW US ON INSTAGRAM @BATTIOFFICAL</p>
+        <p className="text-center text-xs tracking-widest uppercase mb-4">FOLLOW US ON INSTAGRAM @MISSBATTINAILS</p>
         <div className="flex justify-center gap-4">
           <a href="#" className="hover:opacity-70 transition-opacity">
             <Instagram className="w-5 h-5" />

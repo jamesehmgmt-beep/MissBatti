@@ -1,80 +1,81 @@
 import { Link } from "react-router-dom";
-import braImage from "@/assets/bra.png";
-import bodysuitImage from "@/assets/bodysuit.png";
-import shortsImage from "@/assets/shorts.png";
+import bestsellerImage from "@/assets/bestseller.webp";
+import frenchImage from "@/assets/french.webp";
+import newImage from "@/assets/new.webp";
+import inspiredImage from "@/assets/inspired.webp";
 
 export const CategoryGrid = () => {
   return (
     <section className="w-full">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-[2px]">
-        {/* Bestsellers */}
+        {/* Best Seller */}
         <Link
-          to="/category/shapewear"
+          to="/category/best-seller"
           className="category-card group aspect-[3/4] relative"
         >
           <img 
-            src="https://cdn.shopify.com/s/files/1/0650/1629/9579/files/a0aca61a-af25-400e-b88e-2295e6bcea10_0.jpg?v=1766718341" 
-            alt="Bestsellers"
+            src={bestsellerImage} 
+            alt="Best Seller"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
           <div className="absolute inset-0 z-10 flex items-end justify-center pb-8">
             <span className="font-serif text-sm md:text-lg tracking-widest uppercase text-background drop-shadow-lg transform group-hover:translate-y-[-4px] transition-transform duration-300">
-              Bestsellers
+              Best Seller
             </span>
           </div>
         </Link>
 
-        {/* Bra's */}
+        {/* French */}
         <Link
-          to="/product/batti©-posturefix"
+          to="/category/french"
           className="category-card group aspect-[3/4] relative"
         >
           <img 
-            src={braImage} 
-            alt="Bra's"
+            src={frenchImage} 
+            alt="French"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
           <div className="absolute inset-0 z-10 flex items-end justify-center pb-8">
             <span className="font-serif text-sm md:text-lg tracking-widest uppercase text-background drop-shadow-lg transform group-hover:translate-y-[-4px] transition-transform duration-300">
-              Bra's
+              French
             </span>
           </div>
         </Link>
 
-        {/* Bodysuits */}
+        {/* New Releases */}
         <Link
-          to="/category/bodysuits"
+          to="/category/new-releases"
           className="category-card group aspect-[3/4] relative"
         >
           <img 
-            src={bodysuitImage} 
-            alt="Bodysuits"
+            src={newImage} 
+            alt="New Releases"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
           <div className="absolute inset-0 z-10 flex items-end justify-center pb-8">
             <span className="font-serif text-sm md:text-lg tracking-widest uppercase text-background drop-shadow-lg transform group-hover:translate-y-[-4px] transition-transform duration-300">
-              Bodysuits
+              New Releases
             </span>
           </div>
         </Link>
 
-        {/* Shorts */}
+        {/* Inspired */}
         <Link
-          to="/category/shorts"
+          to="/category/inspired"
           className="category-card group aspect-[3/4] relative"
         >
           <img 
-            src={shortsImage} 
-            alt="Shorts"
+            src={inspiredImage} 
+            alt="Inspired"
             className="absolute inset-0 w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
           <div className="absolute inset-0 z-10 flex items-end justify-center pb-8">
             <span className="font-serif text-sm md:text-lg tracking-widest uppercase text-background drop-shadow-lg transform group-hover:translate-y-[-4px] transition-transform duration-300">
-              Shorts
+              Inspired
             </span>
           </div>
         </Link>

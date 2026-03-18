@@ -12,7 +12,7 @@ const ReturnsPage = () => {
             <RefreshCw className="w-12 h-12 mx-auto mb-4 text-foreground" />
             <h1 className="text-3xl font-serif mb-4">Returns & Exchanges</h1>
             <p className="text-muted-foreground">
-              We want you to love your BATTI© pieces. If something isn't right, we're here to help.
+              We want you to love your MissBatti nails. If something isn't right, we're here to help.
             </p>
           </div>
 
@@ -26,7 +26,7 @@ const ReturnsPage = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">Items must be unworn with original tags attached</span>
+                  <span className="text-sm text-muted-foreground">Items must be unopened in original packaging</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />

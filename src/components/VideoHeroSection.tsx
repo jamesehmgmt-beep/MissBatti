@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import heroVideo from "@/assets/1226_2.mp4";
+import showcaseVideo from "@/assets/showcase.mp4";
 
 interface VideoHeroSectionProps {
   ctaLink?: string;
@@ -7,12 +7,12 @@ interface VideoHeroSectionProps {
 }
 
 export const VideoHeroSection = ({ 
-  ctaLink = "/category/shapewear",
+  ctaLink = "/category/all",
   className 
 }: VideoHeroSectionProps) => {
   return (
     <section className={`relative w-full overflow-hidden bg-secondary aspect-video md:aspect-[16/9] ${className || ''}`}>
-      {/* Video background */}
+      {/* Video background - muted, autoplay, loop */}
       <video
         autoPlay
         muted
@@ -20,7 +20,7 @@ export const VideoHeroSection = ({
         playsInline
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src={heroVideo} type="video/mp4" />
+        <source src={showcaseVideo} type="video/mp4" />
       </video>
       
       {/* Overlay */}

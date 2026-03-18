@@ -102,7 +102,7 @@ const AuthPage = () => {
           </h1>
           <p className="text-muted-foreground text-center mb-8">
             {isSignUp 
-              ? "Join Batti to track orders and save your preferences." 
+              ? "Join MissBatti to track orders and save your preferences." 
               : "Welcome back! Sign in to access your account."}
           </p>
 

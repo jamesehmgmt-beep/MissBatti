@@ -10,7 +10,7 @@ const RewardsPage = () => {
         <div className="max-w-3xl mx-auto px-4">
           <div className="text-center mb-12">
             <Gift className="w-12 h-12 mx-auto mb-4 text-foreground" />
-            <h1 className="text-3xl font-serif mb-4">BATTI© Rewards</h1>
+            <h1 className="text-3xl font-serif mb-4">MissBatti Rewards</h1>
             <p className="text-muted-foreground">
               Earn points on every purchase and unlock exclusive benefits.
             </p>

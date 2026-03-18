@@ -18,7 +18,7 @@ const SustainabilityPage = () => {
 
           <div className="space-y-8 text-muted-foreground">
             <p>
-              At BATTI©, we believe that fashion and sustainability can go hand in hand. We're committed to reducing our environmental impact while delivering the quality shapewear you love.
+              At MissBatti, we believe that beauty and sustainability can go hand in hand. We're committed to reducing our environmental impact while delivering the quality press-on nails you love.
             </p>
 
             <div className="border-t border-border pt-8">
@@ -28,7 +28,7 @@ const SustainabilityPage = () => {
                   <strong className="text-foreground">Eco-Friendly Packaging:</strong> We use recycled and recyclable materials for all our packaging.
                 </li>
                 <li>
-                  <strong className="text-foreground">Sustainable Fabrics:</strong> We're working to incorporate more sustainable materials into our collections.
+                  <strong className="text-foreground">Sustainable Materials:</strong> We're working to incorporate more eco-friendly materials into our nail collections.
                 </li>
                 <li>
                   <strong className="text-foreground">Carbon Neutral Shipping:</strong> We offset the carbon emissions from all our deliveries.
