@@ -128,17 +128,23 @@ export const useCartStore = create<CartStore>()(
 
       createCheckout: async () => {
         const { items, setLoading, setCheckoutUrl } = get();
-        if (items.length === 0) return null;
+        // Only send real product items to Shopify (not the fake shipping fee)
+        const productItems = items.filter(item => !item.isShippingFee);
+        if (productItems.length === 0) return null;
 
         setLoading(true);
         try {
           const checkoutUrl = await createStorefrontCheckout(
-            items.map(item => ({ variantId: item.variantId, quantity: item.quantity }))
+            productItems.map(item => ({ variantId: item.variantId, quantity: item.quantity }))
           );
           setCheckoutUrl(checkoutUrl);
           return checkoutUrl;
         } catch (error) {
           console.error('Failed to create checkout:', error);
+          const { toast } = await import('sonner');
+          toast.error('Checkout failed', {
+            description: 'Unable to create checkout. Please try again.',
+          });
           return null;
         } finally {
           setLoading(false);
