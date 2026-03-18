@@ -53,7 +53,7 @@ export interface ShopifyProduct {
 
 // GraphQL Queries
 const STOREFRONT_QUERY = `
-  query GetProducts($first: Int!, $query: String) {
+  query GetProducts($first: Int!, $query: String) @inContext(country: US) {
     products(first: $first, query: $query) {
       edges {
         node {
@@ -103,7 +103,7 @@ const STOREFRONT_QUERY = `
 `;
 
 const PRODUCT_BY_HANDLE_QUERY = `
-  query GetProductByHandle($handle: String!) {
+  query GetProductByHandle($handle: String!) @inContext(country: US) {
     productByHandle(handle: $handle) {
       id
       title

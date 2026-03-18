@@ -625,7 +625,7 @@ const ProductPage = () => {
                 ${originalPrice}
               </span>
               <span className="text-xl font-semibold text-red-600">
-                {formatPrice(currentPrice, selectedVariant?.price.currencyCode || "CAD")}
+                {formatPrice(currentPrice, selectedVariant?.price.currencyCode || "USD")}
               </span>
               <span className="bg-red-600 text-white text-xs px-2 py-0.5 rounded font-medium">
                 Sale 26%
@@ -869,7 +869,7 @@ const ProductPage = () => {
                       <div className="flex flex-col justify-center">
                         <p className="text-sm font-medium leading-tight line-clamp-2">{product.title}</p>
                         <p className="text-sm font-semibold mt-1">
-                          {formatPrice(currentPrice, selectedVariant?.price.currencyCode || "CAD")}
+                          {formatPrice(currentPrice, selectedVariant?.price.currencyCode || "USD")}
                         </p>
                       </div>
                   </div>
