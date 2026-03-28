@@ -53,7 +53,7 @@ export const Header = () => {
       className={`fixed top-4 left-4 right-4 z-50 transition-all duration-500 ${
         isScrolled
           ? "opacity-100 translate-y-0"
-          : "opacity-0 -translate-y-4 pointer-events-none"
+          : "opacity-0 -translate-y-4"
       }`}
     >
       <div className="bg-secondary/95 backdrop-blur-sm shadow-lg rounded-full px-4 lg:px-8 mx-auto max-w-[1800px]">
@@ -110,7 +110,7 @@ export const Header = () => {
               <User className={`w-5 h-5 ${user ? 'fill-foreground' : ''}`} />
             </button>
             <CartDrawer>
-              <button className="relative text-foreground hover:opacity-70 transition-opacity hidden lg:block">
+              <button className="relative text-foreground hover:opacity-70 transition-opacity">
                 <ShoppingBag className="w-5 h-5" />
                 {totalItems > 0 && (
                   <span className="absolute -top-2 -right-2 w-5 h-5 bg-foreground text-background text-xs flex items-center justify-center rounded-full">

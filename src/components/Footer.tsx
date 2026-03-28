@@ -77,16 +77,16 @@ export const Footer = () => {
       <div className="py-8 border-b border-background/20">
         <p className="text-center text-xs tracking-widest uppercase mb-4">FOLLOW US ON INSTAGRAM @MISSBATTINAILS</p>
         <div className="flex justify-center gap-4">
-          <a href="#" className="hover:opacity-70 transition-opacity">
+          <a href="https://www.instagram.com/missbattinails" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
             <Instagram className="w-5 h-5" />
           </a>
-          <a href="#" className="hover:opacity-70 transition-opacity">
+          <a href="https://www.facebook.com/missbattinails" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
             <Facebook className="w-5 h-5" />
           </a>
-          <a href="#" className="hover:opacity-70 transition-opacity">
+          <a href="https://x.com/missbattinails" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
             <Twitter className="w-5 h-5" />
           </a>
-          <a href="#" className="hover:opacity-70 transition-opacity">
+          <a href="https://www.youtube.com/@missbattinails" target="_blank" rel="noopener noreferrer" className="hover:opacity-70 transition-opacity">
             <Youtube className="w-5 h-5" />
           </a>
         </div>
