@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { ttqInitiateCheckout } from "@/lib/tiktokPixel";
 import {
   Sheet,
   SheetContent,
@@ -34,6 +35,18 @@ export const CartDrawer = ({ children }: CartDrawerProps) => {
   } = useCartStore();
 
   const handleCheckout = async () => {
+    // TikTok Pixel: InitiateCheckout
+    const checkoutItems = getProductItems();
+    ttqInitiateCheckout({
+      contents: checkoutItems.map(item => ({
+        content_id: item.product.node.id,
+        content_type: 'product' as const,
+        content_name: item.product.node.title,
+      })),
+      value: getTotalPrice(),
+      currency: checkoutItems[0]?.price.currencyCode || 'USD',
+    });
+
     const checkoutUrl = await createCheckout();
     if (checkoutUrl) {
       window.open(checkoutUrl, '_blank');

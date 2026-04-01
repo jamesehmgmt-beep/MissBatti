@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ttqAddToCart } from "@/lib/tiktokPixel";
 import { useParams, Link } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -102,6 +103,17 @@ const CategoryPage = () => {
       price: firstVariant.price,
       quantity: 1,
       selectedOptions: firstVariant.selectedOptions,
+    });
+
+    // TikTok Pixel: AddToCart
+    ttqAddToCart({
+      contents: [{
+        content_id: product.node.id,
+        content_type: 'product',
+        content_name: product.node.title,
+      }],
+      value: parseFloat(firstVariant.price.amount),
+      currency: firstVariant.price.currencyCode || 'USD',
     });
 
     toast.success("Added to cart!", {

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { ttqCompleteRegistration } from "@/lib/tiktokPixel";
 import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -61,6 +62,8 @@ const AuthPage = () => {
             toast.error(error.message);
           }
         } else {
+          // TikTok Pixel: CompleteRegistration
+          ttqCompleteRegistration();
           toast.success("Account created successfully!");
           navigate("/account");
         }

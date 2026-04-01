@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ttqViewContent, ttqAddToCart } from "@/lib/tiktokPixel";
 import { useParams, Link } from "react-router-dom";
 import { Minus, Plus, Heart, Star, Info, ChevronDown, Ruler, Check, Dumbbell, Leaf, SlidersHorizontal, Settings, WashingMachine, ChevronLeft, ChevronRight, Search, ThumbsUp, MessageSquare } from "lucide-react";
 import { Header } from "@/components/Header";
@@ -464,6 +465,19 @@ const ProductPage = () => {
         setSelectedOptions(defaults);
       }
       setLoading(false);
+
+      // TikTok Pixel: ViewContent
+      if (data) {
+        ttqViewContent({
+          contents: [{
+            content_id: data.id,
+            content_type: 'product',
+            content_name: data.title,
+          }],
+          value: parseFloat(data.priceRange.minVariantPrice.amount),
+          currency: data.priceRange.minVariantPrice.currencyCode || 'USD',
+        });
+      }
     };
     loadProduct();
   }, [handle]);
@@ -504,6 +518,17 @@ const ProductPage = () => {
       price: variant.price,
       quantity,
       selectedOptions: variant.selectedOptions,
+    });
+
+    // TikTok Pixel: AddToCart
+    ttqAddToCart({
+      contents: [{
+        content_id: product.id,
+        content_type: 'product',
+        content_name: product.title,
+      }],
+      value: parseFloat(variant.price.amount) * quantity,
+      currency: variant.price.currencyCode || 'USD',
     });
 
     toast.success("Added to cart!", {
