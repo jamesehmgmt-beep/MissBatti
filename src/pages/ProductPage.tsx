@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/collapsible";
 import prepVideo from "@/assets/how-to-apply/prep.mp4";
 import glueVideo from "@/assets/how-to-apply/glue-application.mp4";
+import whatsIncludedImg from "@/assets/whats-included.jpg";
 
 interface ProductData {
   id: string;
@@ -1268,6 +1269,20 @@ const ProductPage = () => {
 
       {/* How to Apply Section - only for nail products */}
       {isNailProduct(product) && <HowToApplySection />}
+
+      {/* What's Included Section - nail products only */}
+      {isNailProduct(product) && (
+        <div className="px-4 md:px-8 lg:px-16 py-16 bg-background">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">What's Included</h2>
+          <div className="max-w-5xl mx-auto">
+            <img
+              src={whatsIncludedImg}
+              alt="What's Included - 30 nails including 2x popular sizes, prep pad, nail file, wood stick, and nail glue"
+              className="w-full h-auto"
+            />
+          </div>
+        </div>
+      )}
 
       {/* Why We Made This Section */}
       <div className="px-4 md:px-8 lg:px-16 py-16 bg-background">
