@@ -14,12 +14,15 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
+import prepVideo from "@/assets/how-to-apply/prep.mp4";
+import glueVideo from "@/assets/how-to-apply/glue-application.mp4";
 
 interface ProductData {
   id: string;
   title: string;
   description: string;
   handle: string;
+  productType: string;
   priceRange: {
     minVariantPrice: {
       amount: string;
@@ -420,6 +423,106 @@ const ReviewsSection = () => {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Check if product is a nail product (vs apparel or other future categories)
+const isNailProduct = (product: ProductData): boolean => {
+  const type = product.productType?.toLowerCase() || '';
+  const title = product.title.toLowerCase();
+  const desc = product.description?.toLowerCase() || '';
+  const nailKeywords = ['nail', 'press-on', 'press on', 'manicure', 'gel', 'nails'];
+  return nailKeywords.some(kw => type.includes(kw) || title.includes(kw) || desc.includes(kw))
+    || type === '' // default: show for products without a type (current nail products)
+    ;
+};
+
+// How to Apply Section Component
+const howToApplyTabs = {
+  prep: {
+    label: "Prep",
+    steps: [
+      {
+        title: "Size",
+        content: "Test-fit the press-on nails to find the correct size for each finger. (Sizes are found at the back of each press-on.) The edges of your press-on nail should line up with your natural nail to ensure it fits right above your cuticle.",
+      },
+      {
+        title: "Prep",
+        content: "Before applying adhesive, gently push back your cuticles, thoroughly buff your nail surface, and clean with an alcohol pad.",
+      },
+    ],
+  },
+  glue: {
+    label: "Glue Application",
+    steps: [
+      {
+        title: "Apply Glue",
+        content: "Apply a thin, even layer of nail glue to your natural nail. For extra hold, apply a small amount to the press-on nail as well.",
+      },
+      {
+        title: "Press & Hold",
+        content: "Align the press-on nail with your cuticle line and press down firmly. Hold for 30 seconds to ensure a secure bond. Apply pressure from the center outward to avoid air bubbles.",
+      },
+    ],
+  },
+};
+
+const HowToApplySection = () => {
+  const [activeTab, setActiveTab] = useState<keyof typeof howToApplyTabs>("prep");
+  const currentTab = howToApplyTabs[activeTab];
+
+  const videoSrc = activeTab === 'prep' ? prepVideo : glueVideo;
+
+  return (
+    <div className="px-4 md:px-8 lg:px-16 py-16 bg-background border-t border-border">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start max-w-7xl mx-auto">
+        {/* Left - Video based on active tab */}
+        <div className="relative aspect-[4/3] bg-background overflow-hidden rounded-lg">
+          <video
+            key={activeTab}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-contain"
+          >
+            <source src={videoSrc} type="video/mp4" />
+          </video>
+        </div>
+
+        {/* Right - How to Apply Content */}
+        <div className="space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold">How to Apply</h2>
+
+          {/* Tab Navigation */}
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            {Object.entries(howToApplyTabs).map(([key, tab]) => (
+              <button
+                key={key}
+                onClick={() => setActiveTab(key as keyof typeof howToApplyTabs)}
+                className={`text-sm pb-1 transition-colors ${
+                  activeTab === key
+                    ? "text-foreground font-medium border-b-2 border-foreground"
+                    : "text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Tab Content - Steps */}
+          <ol className="space-y-6 list-decimal list-outside pl-5">
+            {currentTab.steps.map((step, idx) => (
+              <li key={idx} className="pl-2">
+                <p className="font-semibold text-base mb-2">{step.title}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.content}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </div>
     </div>
@@ -1162,6 +1265,9 @@ const ProductPage = () => {
           </div>
         </div>
       </div>
+
+      {/* How to Apply Section - only for nail products */}
+      {isNailProduct(product) && <HowToApplySection />}
 
       {/* Why We Made This Section */}
       <div className="px-4 md:px-8 lg:px-16 py-16 bg-background">
